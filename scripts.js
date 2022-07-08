@@ -13,18 +13,17 @@ const leftButton = document.getElementById('up');
 const rightButton = document.getElementById('up');
 const rocketImage = document.getElementById('rocket');
 }
-// add load event handler to window
-window.addEventListener("load", function() {
-    // put DOM code here to ensure elements have been loaded
-    console.log('window loaded');
+
 takeOff.addEventListener('click', event => {
     let response = window.confirm('Confirm that the shuttle is ready for takeoff.');
     if (response) {
         flightStatus.innerHTML = 'Shuttle in flight';
         shuttleBackground = blue;
         shuttleHeight = 10,000;
+    } else {
+        
     }
 });
 
-//window.addEventListener('load', init);
-})
+window.addEventListener('load', init);
+
