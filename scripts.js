@@ -19,15 +19,35 @@ takeOff.addEventListener('click', event => {
     takeOffChanges = () => {
         flightStatus.innerHTML = 'Shuttle in flight';
         shuttleBackground.style.backgroundColor = 'blue';
-        shuttleHeight.innerHTML = '10,000';
+        shuttleHeight.innerHTML = 10000;
     }
-    
+
     if (response) {
        takeOffChanges();
     } else {
         
     }
 });
+
+landButton.addEventListener('click', event => {
+    window.alert('The shuttle is landing. Landing gear engaged.');
+    flightStatus.innerHTML = 'The Shuttle has landed.';
+    shuttleBackground.style.backgroundColor = 'green';
+    shuttleHeight.innerHTML = 0;
+});
+
+abortMissionButton.addEventListener('click', event => {
+    let response = window.confirm('Confirm that you want to abort the mission.');
+
+    if (response) {
+        flightStatus.innerHTML = 'Mission aborted.';
+        shuttleBackground.style.backgroundColor = 'green';
+        shuttleHeight.innerHTML = 0;
+    }
+});
+
+
 }
+
 window.addEventListener('load', init);
 
