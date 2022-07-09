@@ -1,6 +1,6 @@
 // Write your JavaScript code here.
 // Remember to pay attention to page loading!
-
+function init () {
 const takeOff = document.getElementById('takeoff');
 const flightStatus = document.getElementById ('flightStatus');
 const shuttleBackground = document.getElementById('shuttleBackground');
@@ -16,14 +16,18 @@ const rocketImage = document.getElementById('rocket');
 
 takeOff.addEventListener('click', event => {
     let response = window.confirm('Confirm that the shuttle is ready for takeoff.');
-    if (response) {
+    takeOffChanges = () => {
         flightStatus.innerHTML = 'Shuttle in flight';
-        shuttleBackground = blue;
-        shuttleHeight = 10,000;
+        shuttleBackground.style.backgroundColor = 'blue';
+        shuttleHeight.innerHTML = '10,000';
+    }
+    
+    if (response) {
+       takeOffChanges();
     } else {
         
     }
 });
-
-window.addEventListener('load', event);
+}
+window.addEventListener('load', init);
 
